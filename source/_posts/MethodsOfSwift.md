@@ -2,7 +2,7 @@
 title: Swift常用方法总结----不定期更新
 ---
 
-###1.本地读取json文件
+### 1.本地读取json文件
 
 ```
 	func readJsonFileByFileName(fileName : String) -> Any? {
@@ -13,7 +13,7 @@ title: Swift常用方法总结----不定期更新
         return jsonStr
     }
 ```
-###2.实现手机号银行卡号输入加空格
+### 2.实现手机号银行卡号输入加空格
 eg：188 8888 8888
 
 ```
@@ -162,7 +162,7 @@ private func formatPhoneNumText (textField:UITextField, range:NSRange, string:St
     }
 
 ```
-###3.给UITextField的placeholder设置字体大小
+### 3.给UITextField的placeholder设置字体大小
 ```
 使用：textField.verticalLeftPlaceholder(phFontSize: 15)
 
@@ -188,7 +188,7 @@ extension UITextField {
 }
 ```
 
-###4.插入排序
+### 4.插入排序
 ⒈ 从第一个元素开始，该元素可以认为已经被排序
 ⒉ 取出下一个元素，在已经排序的元素序列中从后向前扫描
 ⒊ 如果该元素（已排序）大于新元素，将该元素移到下一位置
@@ -212,7 +212,7 @@ public func insertionSort(arr: inout Array<Int>) {
 }
 ```
 
-###5.冒泡排序
+### 5.冒泡排序
 
 ⒈比较相邻的元素。如果第一个比第二个大，就交换他们两个。
 ⒉ 对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的元素应该会是最大的数。
@@ -230,7 +230,7 @@ public func bubbleSort(arr: inout Array<Int>) {
 }
 ```
 
-###6.快速排序（冒泡排序的改进版）
+### 6.快速排序（冒泡排序的改进版）
 
 ⒈设置两个变量i、j，排序开始的时候：i=0，j=n-1。
 ⒉ 以第一个数组元素作为关键数据，赋值给key，即key=A[0]。
@@ -270,7 +270,7 @@ private func getMidIndex(arr: inout Array<Int>, leftIndex: inout Int, rightIndex
     return leftIndex
 }
 ```
-###7.归并排序（速度仅次于快速排序）
+### 7.归并排序（速度仅次于快速排序）
 
 ⒈将序列每相邻两个数字进行归并操作（merge)，形成floor(n/2)个序列，排序后每个序列包含两个元素。
 ⒉ 将上述序列再次归并，形成floor(n/4)个序列，每个序列包含四个元素。
@@ -319,7 +319,7 @@ private func mergeTowArr(arr1: Array<Int>, arr2: Array<Int>) -> Array<Int> {
 }
 ```
 
-###8.选择排序
+### 8.选择排序
 
 选择排序（Selection sort）是一种简单直观的排序算法。它的工作原理是每一次从待排序的数据元素中选出最小（或最大）的一个元素，存放在序列的起始位置，直到全部待排序的数据元素排完。 选择排序是不稳定的排序方法（比如序列[5， 5， 3]第一次就将第一个[5]与[3]交换，导致第一个5挪动到第二个5后面）
 ```
@@ -337,7 +337,7 @@ public func selectSort(arr: inout Array<Int>) {
     }
 }
 ```
-###9.堆排序（选择排序的一种）
+### 9.堆排序（选择排序的一种）
 通过headMakeFrom将数组arr变为大顶堆，再把大顶堆的第一值和最后一个值交换，数组长度减1。通过heapAdjast将交换后的数组重新排序成大顶堆直到数组长度为0。
 
 ```
@@ -380,7 +380,7 @@ private func heapAdjast(arr: Array<Int>, starIndex: Int, arrLength: Int) {
     arr[parentIndex - 1] = temp
 }
 ```
-###10. 生成指定尺寸的纯色图片
+### 10. 生成指定尺寸的纯色图片
 ```
 func imageWithColor(color: UIColor!, size: CGSize) -> UIImage{
     var size = size
@@ -399,7 +399,7 @@ func imageWithColor(color: UIColor!, size: CGSize) -> UIImage{
 }
 ```
 
-###11- 修改图片尺寸
+### 11- 修改图片尺寸
 ```
 func imageScaleToSize(image: UIImage, size: CGSize) -> UIImage{
     // 创建一个bitmap的context
@@ -424,7 +424,7 @@ func imageScaleToSize(image: UIImage, size: CGSize) -> UIImage{
     return scaledImage
 }
 ```
-###12. 压缩图片大小
+### 12. 压缩图片大小
 ```
 func imageCompress(originalImage: UIImage) -> UIImage{
     guard let imageData = UIImageJPEGRepresentation(originalImage, 0.5) else{
