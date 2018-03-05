@@ -51,7 +51,9 @@ let encodingString = urlStr.addingPercentEncoding(withAllowedCharacters: charSet
 ![wc.png](http://upload-images.jianshu.io/upload_images/1447375-d729f1de206f6ab9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ## 原因分析
-问题是出在```let charSet = CharacterSet.urlQueryAllowed as! NSMutableCharacterSet ```这一行，在swift语言中，Foundation框架中的很多class都重新用struct重写了，比如NSString和String，NSUrl和URL，如果要使用类似于OC一些特性，有时候需要as来强转成对应的NS开头的类。强转的过程中，CharacterSet应该转成NSCharacterSet,而不应该是NSMutableCharacterSet，也就是说**子类指针指向了父类对象**，父类里面没有子类的方法，所以执行```charSet.addCharacters(in: "#")```的时候，无法正确添加。
+问题是出在
+let charSet = CharacterSet.urlQueryAllowed as! NSMutableCharacterSet 
+这一行，在swift语言中，Foundation框架中的很多class都重新用struct重写了，比如NSString和String，NSUrl和URL，如果要使用类似于OC一些特性，有时候需要as来强转成对应的NS开头的类。强转的过程中，CharacterSet应该转成NSCharacterSet,而不应该是NSMutableCharacterSet，也就是说**子类指针指向了父类对象**，父类里面没有子类的方法，所以执行charSet.addCharacters(in: "#")的时候，无法正确添加。
 
 ## 正确的写法
 顺着原因一路分析，应该这么写：
