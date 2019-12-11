@@ -20,7 +20,7 @@ IM已读回执，整个的过程简单说来就是：
 群聊也是如此，在群聊中发出一条消息，通过回执功能可以看出谁已读或者未读。
 如果你用过钉钉，就很好理解这个流程。
 
-##3.前期准备
+## 3.前期准备
 既然是迭代开发，没玩过这个SDK肯定是要查看开发文档的。
 [NIMKit文档](https://github.com/netease-im/NIM_iOS_UIKit/blob/master/Documents/nim_custom_ui.md)
 [单聊文档](https://dev.yunxin.163.com/docs/product/IM%E5%8D%B3%E6%97%B6%E9%80%9A%E8%AE%AF/SDK%E5%BC%80%E5%8F%91%E9%9B%86%E6%88%90/iOS%E5%BC%80%E5%8F%91%E9%9B%86%E6%88%90/%E6%B6%88%E6%81%AF%E6%94%B6%E5%8F%91?#%E5%B7%B2%E8%AF%BB%E5%9B%9E%E6%89%A7)
@@ -34,7 +34,7 @@ IM已读回执，整个的过程简单说来就是：
 
 讲到这里，其实最最首要的任务是：**充钱，充钱，充钱！**
 
-##4.拿起键盘就是干
+## 4.拿起键盘就是干
 ![就是干](https://upload-images.jianshu.io/upload_images/1447375-7e42bf91528876c9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/613/format/webp)
 
 ### 4.1 聊天Cell定制
@@ -129,7 +129,7 @@ message.setting.teamReceiptEnabled = YES; // 设置里打开才行。
 发送已读回执之后，对方的那条消息，就能看到
 `model.message.teamReceiptInfo.unreadCount`就能再UI上显示多少人未读。
 
-###4.4 群聊查看消息已读未读列表
+### 4.4 群聊查看消息已读未读列表
 SDK里面已提供了查询消息已读id列表接口
 查询详情接口
 包括已读人数的 id 和 未读人数的 id 列表。需要注意查询详情对象不会跟着回执人数变化而变化，如果要获取最新的详情，必须再次调用此接口。
