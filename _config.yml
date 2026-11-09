@@ -7,7 +7,7 @@ title: 抢手的哥的技术博客
 subtitle: 不会敲代码的老司机不是好厨子
 description: 欢迎来到抢手的哥的技术博客
 author: 抢手的哥
-language: zh-Hans
+language: zh-CN
 timezone: Asia/Shanghai
 
 # URL
@@ -72,7 +72,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

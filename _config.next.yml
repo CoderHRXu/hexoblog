@@ -1,0 +1,102 @@
+# NexT 主题自定义配置（覆盖 themes/next/_config.yml 默认值）
+# 文档：https://theme-next.js.org/docs/getting-started/configuration
+
+# ---------------------------------------------------------------
+# 布局方案：Muse / Mist / Pisces / Gemini（Gemini 支持暗黑模式切换）
+# ---------------------------------------------------------------
+scheme: Gemini
+
+# ---------------------------------------------------------------
+# 菜单
+# ---------------------------------------------------------------
+menu:
+  home: / || fa fa-home
+  archives: /archives/ || fa fa-archive
+  categories: /categories/ || fa fa-th
+  tags: /tags/ || fa fa-tags
+
+# ---------------------------------------------------------------
+# 侧边栏
+# ---------------------------------------------------------------
+sidebar:
+  position: left
+  display: post
+
+avatar:
+  rounded: true
+  rotated: false
+
+# ---------------------------------------------------------------
+# 本地搜索（依赖 hexo-generator-searchdb 插件）
+# ---------------------------------------------------------------
+local_search:
+  enable: true
+  trigger: auto
+  top_n_per_article: 1
+  unescape: false
+  preload: false
+
+# ---------------------------------------------------------------
+# 代码块
+# ---------------------------------------------------------------
+codeblock:
+  highlight_theme: light
+  copy_button:
+    enable: true
+    show_result: true
+
+# ---------------------------------------------------------------
+# 阅读进度 / 回到顶部
+# ---------------------------------------------------------------
+back2top:
+  enable: true
+  sidebar: false
+  scrollpercent: true
+
+reading_progress:
+  enable: true
+  color: "#37c6c0"
+  height: 2px
+
+# ---------------------------------------------------------------
+# 页脚
+# ---------------------------------------------------------------
+footer:
+  since: 2018
+  icon:
+    name: user
+    animated: false
+    color: "#808080"
+  powered: true
+  theme:
+    enable: true
+    version: false
+
+# ---------------------------------------------------------------
+# 文章元信息
+# ---------------------------------------------------------------
+post_meta:
+  created_at: true
+  updated_at:
+    enable: false
+  categories: true
+  tags: true
+
+# ---------------------------------------------------------------
+# 动效
+# ---------------------------------------------------------------
+motion:
+  enable: true
+  async: true
+  transition:
+    post_block: fadeIn
+    post_header: fadeInDown
+    post_body: fadeInDown
+    coll_header: fadeInLeft
+    sidebar: fadeInUp
+
+# ---------------------------------------------------------------
+# 社交链接（按需修改 username）
+# ---------------------------------------------------------------
+social:
+  GitHub: https://github.com/CoderHRXu || fab fa-github

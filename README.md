@@ -13,7 +13,7 @@
 | 层次 | 方案 |
 |---|---|
 | 静态站点生成 | Hexo 8.1.2（Node ≥ 18） |
-| 主题 | [Landscape](https://github.com/hexojs/hexo-theme-landscape)（内置主题） |
+| 主题 | [NexT](https://theme-next.js.org/) v8.29.1（Gemini 方案） |
 | 托管 | GitHub Pages（`CoderHRXu/CoderHRXu.github.io`，`master` 分支） |
 | DNS / CDN | Cloudflare（代理模式，隐藏源站） |
 | 渲染 | EJS + Stylus + Marked |
@@ -23,12 +23,16 @@
 ```
 hexoblog/
 ├── _config.yml          # 站点配置（标题、URL、permalink、deploy 等）
+├── _config.next.yml     # NexT 主题自定义配置（scheme、菜单、搜索等）
 ├── scaffolds/           # 新建文章/页面模板
 ├── source/
 │   ├── CNAME            # 自定义域名 → githubio.95783669.xyz
-│   └── _posts/          # 博客文章（Markdown，24 篇）
+│   ├── _posts/          # 博客文章（Markdown，24 篇）
+│   ├── categories/      # 分类页
+│   └── tags/            # 标签页
 ├── themes/
-│   └── landscape/       # 主题（含独立 _config.yml）
+│   ├── next/            # NexT 主题（git clone，勿直接改其 _config.yml）
+│   └── landscape/       # 旧主题（备用）
 ├── public/              # 构建产物（generate 后生成，不入库）
 └── package.json         # 依赖与 Hexo 版本声明
 ```
@@ -92,7 +96,8 @@ npx hexo clean && npx hexo generate && npx hexo deploy
 | `title` | 抢手的哥的技术博客 | 站点标题 |
 | `url` | https://githubio.95783669.xyz | **必须与自定义域名一致**，影响站点地图与绝对链接 |
 | `permalink` | `:year/:month/:day/:title/` | 文章永久链接格式 |
-| `language` | zh-Hans | 中文 |
+| `language` | zh-CN | 中文（与 NexT 语言包对应） |
+| `theme` | next | 主题名需与 `themes/` 下目录名一致，否则整站渲染空白 |
 | `deploy.repo` | `git@github.com:CoderHRXu/CoderHRXu.github.io.git` | 部署目标仓库 |
 | `deploy.branch` | master | 部署分支 |
 
