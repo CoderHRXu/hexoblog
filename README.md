@@ -4,7 +4,7 @@
 
 基于 [Hexo](https://hexo.io/) 构建的静态技术博客，主要记录 iOS / Swift / 前端 / 工具链相关的实践与踩坑经验。
 
-**线上地址**：https://githubio.95783669.xyz
+**线上地址**：https://blog.95783669.xyz
 
 ---
 
@@ -26,7 +26,7 @@ hexoblog/
 ├── _config.next.yml     # NexT 主题自定义配置（scheme、菜单、搜索等）
 ├── scaffolds/           # 新建文章/页面模板
 ├── source/
-│   ├── CNAME            # 自定义域名 → githubio.95783669.xyz
+│   ├── CNAME            # 自定义域名 → blog.95783669.xyz
 │   ├── _posts/          # 博客文章（Markdown，24 篇）
 │   ├── categories/      # 分类页
 │   └── tags/            # 标签页
@@ -68,7 +68,7 @@ npx hexo clean && npx hexo generate && npx hexo deploy
 ### 部署注意事项
 
 0. **Hexo 已升级到 8.x**：原 3.4.4 在 Node 22 上会静默生成 0 字节空文件（表现为整站空白）。若看到 `public/` 里文件都是 0 字节，先跑 `npx hexo generate --force`。历史依赖已备份在 `package.json.bak`。
-1. **CNAME 必须存在且内容正确**：`source/CNAME` 内容为 `githubio.95783669.xyz`。构建后请确认 `public/CNAME` 非空——曾有 Hexo 生成空 CNAME 文件导致 GitHub Pages 不认自定义域名、整站 404 的情况。
+1. **CNAME 必须存在且内容正确**：`source/CNAME` 内容为 `blog.95783669.xyz`。构建后请确认 `public/CNAME` 非空——曾有 Hexo 生成空 CNAME 文件导致 GitHub Pages 不认自定义域名、整站 404 的情况。
 2. **SSH 认证**：本机使用 `~/.ssh/id_ed25519` 推送，公钥已添加到 GitHub 账号。若更换机器，需重新配置。
 3. **代理干扰**：若所在环境设置了 `HTTP_PROXY` / `HTTPS_PROXY`，代理可能拦截 `github.com` 的 CONNECT 请求导致推送失败（502）。可对 git 临时绕过：
 
@@ -76,7 +76,7 @@ npx hexo clean && npx hexo generate && npx hexo deploy
    git -c http.proxy= -c https.proxy= push
    ```
 
-4. **DNS 侧**：Cloudflare 上 `githubio.95783669.xyz` 需指向 GitHub Pages（A 记录 / CNAME），并保持代理开启。切换自定义域名后，GitHub Pages 的 TLS 证书需几分钟重新签发，期间可能短暂 404 或证书告警。
+4. **DNS 侧**：Cloudflare 上 `blog.95783669.xyz` 需指向 GitHub Pages（A 记录 / CNAME），并保持代理开启。切换自定义域名后，GitHub Pages 的 TLS 证书需几分钟重新签发，期间可能短暂 404 或证书告警。
 
 ## 文章分类概览
 
@@ -94,7 +94,7 @@ npx hexo clean && npx hexo generate && npx hexo deploy
 | 键 | 当前值 | 说明 |
 |---|---|---|
 | `title` | 抢手的哥的技术博客 | 站点标题 |
-| `url` | https://githubio.95783669.xyz | **必须与自定义域名一致**，影响站点地图与绝对链接 |
+| `url` | https://blog.95783669.xyz | **必须与自定义域名一致**，影响站点地图与绝对链接 |
 | `permalink` | `:year/:month/:day/:title/` | 文章永久链接格式 |
 | `language` | zh-CN | 中文（与 NexT 语言包对应） |
 | `theme` | next | 主题名需与 `themes/` 下目录名一致，否则整站渲染空白 |
